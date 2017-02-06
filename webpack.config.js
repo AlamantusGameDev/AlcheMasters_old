@@ -36,6 +36,8 @@ module.exports = {
     ,   filename: '[name].bundle.js'
     }
 
+,   devtool: 'source-map'
+
 ,   module: {
         loaders: [
             {
@@ -72,6 +74,6 @@ module.exports = {
         ,   Phaser: phaserPath
         })
     // Comment the optimize lines if it builds too slow while developing.
-    ,   new webpack.optimize.UglifyJsPlugin(webpackUglifySettings)
+    // ,   new webpack.optimize.UglifyJsPlugin(webpackUglifySettings)
     ]
 };

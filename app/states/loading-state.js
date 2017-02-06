@@ -7,7 +7,11 @@ import backgroundImagePath from '../assets/images/background.png';
 import exampleMapJSONPath from '../assets/maps/example-map.json';
 
 export class LoadingState extends Phaser.State {
-    preload() {
+    constructor (...args) {
+        super(...args);
+    }
+
+    preload () {
         let loader = this.add.image(this.world.centerX, this.world.centerY, 'loader');
         loader.anchor.set(0.5, 0.5);
         this.load.setPreloadSprite(loader);
@@ -17,17 +21,17 @@ export class LoadingState extends Phaser.State {
         this.load.tilemap('example-map', exampleMapJSONPath, null, Phaser.Tilemap.TILED_JSON);
     }
 
-    create() {
+    create () {
         this.time.events.add(500, () => {
             this.game.trigger(STATE_EVENTS.LOADING_COMPLETED);
         });
     }
 
-    update() {
+    update () {
 
     }
 
-    render() {
+    render () {
 
     }
 }
