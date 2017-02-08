@@ -4,6 +4,7 @@ import STATE_EVENTS from '../constants/state-events';
 // and their paths handled automatically when using the variable specified.
 import playerImagePath from '../assets/images/player.png';
 import backgroundImagePath from '../assets/images/background.png';
+
 import exampleMapJSONPath from '../assets/maps/example-map.json';
 
 export class LoadingState extends Phaser.State {
@@ -18,7 +19,7 @@ export class LoadingState extends Phaser.State {
 
         this.load.image('player', playerImagePath);
         this.load.image('background', backgroundImagePath);
-        this.load.tilemap('example-map', exampleMapJSONPath, null, Phaser.Tilemap.TILED_JSON);
+        this.load.tilemap('example-map', null, exampleMapJSONPath, Phaser.Tilemap.TILED_JSON);
     }
 
     create () {
