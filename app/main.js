@@ -1,5 +1,7 @@
 import 'babel-polyfill';
 
+import './assets/fonts/fonts.css';
+
 import { Game } from './game';
 import { StateManager } from './state-manager';
 import GAME from './constants/game';

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'AutourOne';
+    src: url('./AutourOne.eot');
+    src: url('./AutourOne.eot?#iefix') format('embedded-opentype'),
+    url('./AutourOne.woff2') format('woff2'),
+    url('./AutourOne.woff') format('woff'),
+    url('./AutourOne.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

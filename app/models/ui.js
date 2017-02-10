@@ -37,11 +37,16 @@ export class UI {
         return button;
     }
 
-    addText (x, y, text, {font = 'defaultUIFont', size = 32, align = 'center', anchorX = 0.5, anchorY = 0}) {
-        let bitmapText = this.state.add.bitmapText(x, y, font, text, size, this.uiGroup);
-        bitmapText.align = align;
-        bitmapText.anchor.setTo(anchorX, anchorY);
+    addText (x, y, text, {font = 'Georgia', size = 32, align = 'center', anchorX = 0.5, anchorY = 0}) {
+        let style = {
+            font: font
+        ,   fontSize: size
+        ,   align: align
+        };
+        let webText = this.state.add.text(x, y, font, text, style, this.uiGroup);
+        webText.align = align;
+        webText.anchor.setTo(anchorX, anchorY);
 
-        return bitmapText;
+        return webText;
     }
 }
