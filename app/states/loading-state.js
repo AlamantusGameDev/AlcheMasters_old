@@ -1,5 +1,9 @@
 import STATE_EVENTS from '../constants/state-events';
 
+// Load Fonts
+import WebFont from 'webfontloader';
+import fontCSS from '../assets/fonts/fonts.css';
+
 // Images and maps loaded this way will be packed with the main game bundle
 // and their paths handled automatically when using the variable specified.
 import playerImagePath from '../assets/images/player.png';
@@ -20,6 +24,18 @@ export class LoadingState extends Phaser.State {
         this.load.image('player', playerImagePath);
         this.load.image('background', backgroundImagePath);
         this.load.tilemap('example-map', null, exampleMapJSONPath, Phaser.Tilemap.TILED_JSON);
+
+        WebFont.load({
+            custom: {
+                families: [
+                    'AutourOne'
+                ,   'Almendra'
+                ]
+                ,   urls: [
+                    fontCSS
+                ]
+            }
+        });
     }
 
     create () {

@@ -27,9 +27,6 @@ export class ExampleState extends Phaser.State {
 
         this.game.player = new Player(this.game, PLAYER.DEFAULT_X, PLAYER.DEFAULT_Y);
         this.game.trigger(STATE_EVENTS.EXAMPLE_COMPLETED);
-
-        this.gui = new MainScreen(this);
-        this.gui.show();
     }
 
     update () {

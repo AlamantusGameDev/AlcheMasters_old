@@ -1,4 +1,4 @@
-import {UI} from '../ui';
+import {UI} from '../../classes/ui';
 
 export class MainScreen extends UI {
     constructor (state) {
@@ -8,6 +8,22 @@ export class MainScreen extends UI {
     setup () {
         let game = this.state.game;
 
-        let mainButton = this.addButton(game.width / 2, game.height / 2, 'player', () => {console.log('yay')});
+        let mainText = this.addText(game.width / 2, game.height * 0.25, 'AlcheMasters', {
+            font: 'Almendra'
+        ,   size: 48
+        });
+
+        let mainButton = this.addTextButton(game.width / 2, game.height / 2, 'Play', () => {
+            this.changeState('Example');
+        }, {
+            fontSize: 20
+        ,   buttonRadius: {
+                tl: 15
+            ,   br: 15
+            }
+        ,   buttonPaddingScale: {
+                vertical: 0.1
+            }
+        });
     }
 }
