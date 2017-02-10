@@ -56,9 +56,10 @@ export class UI {
         button.mouseisOver = false;
 
         // Set the button's neutral tint to
-        let neutralTint = 0xDDDDDD,
-            hoverTint = 0xFFFFFF,
-            clickTint = 0xAAAAAA;
+        let neutralTint = 0xDDDDDD
+        ,   hoverTint = 0xFFFFFF
+        ,   clickTint = 0xAAAAAA
+        ;
         button.tint = neutralTint;
 
         button.onInputOver.add(() => {
@@ -83,11 +84,11 @@ export class UI {
 
     addText (x, y, text, {
         font = UICONST.DEFAULT_TEXT_FONT
-    ,   size = 20
-    ,   color = 'white'
-    ,   outlineColor = 'black'
+    ,   size = UICONST.DEFAULT_FONT_SIZE
+    ,   color = UICONST.DEFAULT_TEXT_COLOR
+    ,   outlineColor = UICONST.DEFAULT_TEXT_OUTLINE_COLOR
     ,   outlineThickness = 0
-    ,   align = 'center'
+    ,   align = UICONST.DEFAULT_TEXT_ALIGNMENT
     ,   anchorX = UICONST.DEFAULT_TEXT_ANCHOR.x
     ,   anchorY = UICONST.DEFAULT_TEXT_ANCHOR.y
     } = {}) {
@@ -107,8 +108,8 @@ export class UI {
     }
 
     addTextButton (x, y, text, callback = () => {}, {
-        buttonColor = '#76DE00'
-    ,   textColor = '#FFFFFF'
+        buttonColor = UICONST.DEFAULT_TEXTBUTTON_COLOR
+    ,   textColor = UICONST.DEFAULT_TEXTBUTTON_TEXT_COLOR
     ,   font = UICONST.DEFAULT_TEXTBUTTON_FONT
     ,   fontSize = undefined
     ,   anchorX = UICONST.DEFAULT_BUTTON_ANCHOR.x
