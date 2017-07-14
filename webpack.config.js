@@ -6,6 +6,9 @@ const ENV = 'dev';
 const path = require('path'),
   webpack = require('webpack');
 
+const APP_DIR = path.resolve(__dirname, 'app');
+const BUILD_DIR = path.resolve(__dirname, 'public');
+
 const phaserModulePath = path.join(__dirname, '/node_modules/phaser/'),
   phaserPath = path.join(phaserModulePath, 'build/custom/phaser-split.js'),
   pixiPath = path.join(phaserModulePath, 'build/custom/pixi.js'),
@@ -13,12 +16,12 @@ const phaserModulePath = path.join(__dirname, '/node_modules/phaser/'),
 
 let webpackExport = {
   entry: {
-    game: './app/main',
+    game: APP_DIR + '/main.js',
     // optionalOtherBundle: './path/to/other/script', 
   },
 
   output: {
-    path: './public/dist',
+    path: BUILD_DIR + '/dist',
     filename: '[name].bundle.js',
   },
 
@@ -77,7 +80,7 @@ let webpackExport = {
               optimizationLevel: 5,
             },
           },
-        }
+        ],
       },
       {
         test: /\.css$/,
@@ -88,7 +91,7 @@ let webpackExport = {
           {
             loader: 'css-loader',
           },
-        }
+        ]
       },
       {
         test: /\.woff$/,
@@ -152,6 +155,13 @@ let webpackExport = {
       Phaser: phaserPath,
     }),
   ],
+
+  devServer: {
+    contentBase: path.join(__dirname, "public"),
+    compress: true,
+    port: 3013,
+    historyApiFallback: true,
+  },
 };
 
 if (ENV === 'prod') {

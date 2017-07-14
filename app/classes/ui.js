@@ -57,9 +57,9 @@ export class UI {
 
     // Set the button's neutral tint to just a little bit darker than its regular shade.
     let neutralTint = 0xDDDDDD,
-    hoverTint = 0xFFFFFF,
-    clickTint = 0xAAAAAA,
-    ;
+      hoverTint = 0xFFFFFF,
+      clickTint = 0xAAAAAA;
+      
     button.tint = neutralTint;
 
     button.onInputOver.add(() => {

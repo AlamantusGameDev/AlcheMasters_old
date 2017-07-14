@@ -9,6 +9,7 @@
         "url": "http://alamantus.com/"
     },
     "scripts": {
+        "dev": "node_modules/.bin/webpack-dev-server",
         "watch": "webpack --progress -w",
         "build": "webpack --profile -p",
         "clear": "rm -rf ./public/dist/",
@@ -38,7 +39,8 @@
         "style-loader": "^0.13.1",
         "typings": "^2.0.0",
         "url-loader": "^0.5.7",
-        "webpack": "^3.2.0"
+        "webpack": "^3.2.0",
+        "webpack-dev-server": "^2.5.1"
     },
     "repository": {
         "type": "git",
